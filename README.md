@@ -46,32 +46,12 @@ In addition, we use a intermediate weights because training process need to take
 When training begins, the model weights will be saved every epoch. <br />
 If you want to train quickly, you should use **--use_fast_loader** option.
 
-```bash
-python main.py --scale 2 \
-               --num_rg 10 \
-               --num_rcab 20 \ 
-               --num_features 64 \              
-               --images_dir "" \
-               --outputs_dir "" \               
-               --patch_size 48 \
-               --batch_size 16 \
-               --num_epochs 20 \
-               --lr 1e-4 \
-               --threads 8 \
-               --seed 123 \
-               --use_fast_loader              
-```
 
 ### Test
 
 Output results consist of restored images by the BICUBIC and the RCAN.
 
-```bash
-python example --scale 2 \
-               --num_rg 10 \
-               --num_rcab 20 \
-               --num_features 64 \
-               --weights_path "" \
-               --image_path "" \
-               --outputs_dir ""                              
-```
+
+### 体会 
+比赛最后生成的图片像素有点大，资源有限，自己掏钱买了一台1080ti电脑，吃了大半年土，奈何一块1080ti还是太low。
+对一块显卡的人来说DBPN，RCAN层数必须要减少一下，否则测试会内存溢出，也试了下cvpr2019的SAN，也必须阉割一下。后面由于实习等原因放弃了，能学以致，这次比赛真的是不错的体验，一起加油吧
